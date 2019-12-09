@@ -1,0 +1,10 @@
+name: EpicHooks
+main: world.bentobox.epichooks.EpicHooksAddon
+version: ${version}${build.number}
+icon: HOPPER
+
+depend: [EpicHoppers]
+
+prefix: EpicHooks
+
+authors: [BONNe]
