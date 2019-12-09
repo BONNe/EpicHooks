@@ -1,6 +1,6 @@
 # EpicHooks Addon
 [![Discord](https://img.shields.io/discord/272499714048524288.svg?logo=discord)](https://discord.bentobox.world)
-[![Build Status](https://ci.codemc.org/buildStatus/icon?job=BentoBoxWorld/TwerkingForTrees)](https://ci.codemc.org/job/BentoBoxWorld/job/EpicHooks/)
+[![Build Status](https://ci.codemc.org/buildStatus/icon?job=BentoBoxWorld/EpicHooks)](https://ci.codemc.org/job/BentoBoxWorld/job/EpicHooks/)
 
 This addon allows to hook into Songoda Epic plugins, like EpicHopper!
 
