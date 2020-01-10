@@ -120,6 +120,21 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>github</id>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub BONNePlayground Apache Maven Packages</name>
+                    <url>https://maven.pkg.github.com/BONNePlayground/EpicHooks</url>
+                </repository>
+                <snapshotRepository>
+                    <id>github</id>
+                    <name>GitHub BONNePlayground Apache Maven Packages</name>
+                    <url>https://maven.pkg.github.com/BONNePlayground/EpicHooks</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
     </profiles>
 
     <repositories>
