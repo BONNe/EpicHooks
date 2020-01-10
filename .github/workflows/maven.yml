@@ -25,5 +25,5 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn -Pgithub -B install -Dregistry=https://maven.pkg.github.com/BONNePlayground -Dtoken=${{ secrets.ActionToken }} --file pom.xml
+      run: mvn -Pgithub -B deploy -Dregistry=https://maven.pkg.github.com/BONNePlayground/EpicHooks -Dtoken=${{ secrets.ActionToken }} --file pom.xml
 
