@@ -1,10 +1,6 @@
 package world.bentobox.epichooks;
 
-import org.bukkit.Material;
-
 import world.bentobox.bentobox.api.addons.Addon;
-import world.bentobox.bentobox.api.flags.Flag;
-import world.bentobox.bentobox.managers.RanksManager;
 import world.bentobox.epichooks.events.HopperAccessListener;
 
 
@@ -38,17 +34,17 @@ public final class EpicHooksAddon extends Addon
             return;
         }
 
-        this.getPlugin().getAddonsManager().getGameModeAddons().forEach(
-            EpicHooksAddon.EPIC_HOPPER_ISLAND_PROTECTION::addGameModeAddon);
-
         // This would be a correct way how to do access check.
         //this.registerListener(new HopperAccessListener(this));
         // But because no public maven repo for EpicHoppers with version 4.3.7 and newer exists,
         // then I am forced to hack into all handlers.
         new HopperAccessListener(this);
 
+//      Remove flag as it may confuse players with Hopper flag.
+//        this.getPlugin().getAddonsManager().getGameModeAddons().forEach(
+//            EpicHooksAddon.EPIC_HOPPER_ISLAND_PROTECTION::addGameModeAddon);
         // Register Flags
-        this.registerFlag(EpicHooksAddon.EPIC_HOPPER_ISLAND_PROTECTION);
+        //this.registerFlag(EpicHooksAddon.EPIC_HOPPER_ISLAND_PROTECTION);
     }
 
 
@@ -70,7 +66,7 @@ public final class EpicHooksAddon extends Addon
      * set that only Island owner can access to them. By default it is set to Member
      * rank.
      */
-    public static final Flag EPIC_HOPPER_ISLAND_PROTECTION =
-        new Flag.Builder("EPIC_HOPPER_ISLAND_PROTECTION", Material.HOPPER).defaultRank(
-            RanksManager.MEMBER_RANK).build();
+//    public static final Flag EPIC_HOPPER_ISLAND_PROTECTION =
+//        new Flag.Builder("EPIC_HOPPER_ISLAND_PROTECTION", Material.HOPPER).defaultRank(
+//            RanksManager.MEMBER_RANK).build();
 }

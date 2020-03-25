@@ -8,6 +8,7 @@ import org.bukkit.plugin.RegisteredListener;
 import org.eclipse.jdt.annotation.NonNull;
 
 import world.bentobox.bentobox.api.user.User;
+import world.bentobox.bentobox.lists.Flags;
 import world.bentobox.bentobox.util.Util;
 import world.bentobox.epichooks.EpicHooksAddon;
 
@@ -63,7 +64,7 @@ public class HopperAccessListener implements Listener
 
             if (!this.addon.getIslands().getIslandAt(player.getLocation()).
                 map(i -> i.isAllowed(User.getInstance(player),
-                    EpicHooksAddon.EPIC_HOPPER_ISLAND_PROTECTION)).
+                    Flags.HOPPER)).
                 orElse(false))
             {
                 // Player does not have access to hoppers in this island
