@@ -41,7 +41,11 @@ public final class EpicHooksAddon extends Addon
         this.getPlugin().getAddonsManager().getGameModeAddons().forEach(
             EpicHooksAddon.EPIC_HOPPER_ISLAND_PROTECTION::addGameModeAddon);
 
-        this.registerListener(new HopperAccessListener(this));
+        // This would be a correct way how to do access check.
+        //this.registerListener(new HopperAccessListener(this));
+        // But because no public maven repo for EpicHoppers with version 4.3.7 and newer exists,
+        // then I am forced to hack into all handlers.
+        new HopperAccessListener(this);
 
         // Register Flags
         this.registerFlag(EpicHooksAddon.EPIC_HOPPER_ISLAND_PROTECTION);

@@ -2,11 +2,9 @@ package world.bentobox.epichooks.events;
 
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.Cancellable;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.Listener;
+import org.bukkit.event.*;
 import org.bukkit.event.player.PlayerEvent;
+import org.bukkit.plugin.RegisteredListener;
 import org.eclipse.jdt.annotation.NonNull;
 
 import world.bentobox.bentobox.api.user.User;
@@ -29,6 +27,18 @@ public class HopperAccessListener implements Listener
     public HopperAccessListener(@NonNull EpicHooksAddon addon)
     {
         this.addon = addon;
+
+        RegisteredListener registeredListener =
+            new RegisteredListener(this,
+                (listener, event) -> onHopperAccess(event),
+                EventPriority.NORMAL,
+                this.addon.getPlugin(),
+                true);
+
+        for (HandlerList handler : HandlerList.getHandlerLists())
+        {
+            handler.register(registeredListener);
+        }
     }
 
 
@@ -38,12 +48,12 @@ public class HopperAccessListener implements Listener
      * this world.
      * @param event instance of PlayerEvent.
      */
-    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
-    public void onHopperAccess(PlayerEvent event)
+    public void onHopperAccess(Event event)
     {
-        if (event.getEventName().equals("HopperAccessEvent"))
+        if (event instanceof PlayerEvent &&
+            event.getEventName().equals("HopperAccessEvent"))
         {
-            Player player = event.getPlayer();
+            Player player = ((PlayerEvent) event).getPlayer();
 
             if (!this.addon.getPlugin().getIWM().inWorld(Util.getWorld(player.getWorld())))
             {

@@ -3,7 +3,8 @@ main: world.bentobox.epichooks.EpicHooksAddon
 version: ${version}${build.number}
 icon: HOPPER
 
-depend: [EpicHoppers]
+# Remove dependency as for some reason it may not load before addon.
+#depend: [EpicHoppers]
 
 prefix: EpicHooks
 
