@@ -4,11 +4,6 @@
 
 This addon allows to hook into Songoda Epic plugins, like EpicHopper!
 
-## Currently addon will not work because it is not possible to do something with EpicHopper plugin API.
-## Their API is not accessible via BuildServer, as 4.3.7 version or newer is not available in their public maven repository.
-
-Link to repository [EpicHoppers](https://repo.songoda.com/artifactory/public/com/songoda/EpicHoppers/)
-
 ## How to use
 
 1. Place the addon jar in the addons folder of the BentoBox plugin
