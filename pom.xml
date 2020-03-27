@@ -51,10 +51,11 @@
         <!-- More visible way how to change dependency versions -->
         <spigot.version>1.13.2-R0.1-SNAPSHOT</spigot.version>
         <bentobox.version>1.6.0</bentobox.version>
+        <epichopper.version>4.4.5</epichopper.version>
         <!-- Revision variable removes warning about dynamic version -->
         <revision>${build.version}-SNAPSHOT</revision>
         <!-- This allows to change between versions and snapshots. -->
-        <build.version>1.0.0</build.version>
+        <build.version>1.1.0</build.version>
         <build.number>-LOCAL</build.number>
     </properties>
 
@@ -146,13 +147,10 @@
             <id>codemc-repo</id>
             <url>https://repo.codemc.org/repository/maven-public/</url>
         </repository>
-        <!-- It would be awesome to use proper classes into addon, but
-                unfortunately, it all is under private access and cannot be
-                used without access code -->
-<!--        <repository>-->
-<!--            <id>private</id>-->
-<!--            <url>https://repo.songoda.com/artifactory/public/</url>-->
-<!--        </repository>-->
+        <repository>
+            <id>private</id>
+            <url>https://repo.songoda.com/artifactory/public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -171,12 +169,12 @@
         <!-- It would be awesome to use proper classes into addon, but
 	            unfortunately, it all is under private access and cannot be
 	            used without access code -->
-<!--        <dependency>-->
-<!--            <groupId>com.songoda</groupId>-->
-<!--            <artifactId>EpicHoppers</artifactId>-->
-<!--            <version>4.3.7</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.songoda</groupId>
+            <artifactId>EpicHoppers</artifactId>
+            <version>${epichopper.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 
